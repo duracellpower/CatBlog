@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CatBlog.Models.Cat>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="is-size-2 has-text-weight-bold">Welcome to Mio's Cat Blog, it's amazing!</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Color)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BirthDate)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BirthDate)
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <br>
+        <form method="post" enctype="multipart/form-data" asp-controller="Cat" asp-action="Post">
+            <div class="file">
+                <label class="file-label">
+                    <input class="file-input" type="file" name="catImage">
+                    <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                            Choose a file…
+                        </span>
+                    </span>
+                </label>
+            </div>
+            <div class="control">
+                <button class="button is-link" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
