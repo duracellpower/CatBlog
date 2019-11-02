@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projekt Ilona\\CatBlog\\CatBlog\\CatBlog.csproj": {}
+    "C:\\Users\\ilona\\Documents\\GitHub\\CatBlog\\CatBlog.csproj": {}
   },
   "projects": {
-    "C:\\Projekt Ilona\\CatBlog\\CatBlog\\CatBlog.csproj": {
+    "C:\\Users\\ilona\\Documents\\GitHub\\CatBlog\\CatBlog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projekt Ilona\\CatBlog\\CatBlog\\CatBlog.csproj",
+        "projectUniqueName": "C:\\Users\\ilona\\Documents\\GitHub\\CatBlog\\CatBlog.csproj",
         "projectName": "CatBlog",
-        "projectPath": "C:\\Projekt Ilona\\CatBlog\\CatBlog\\CatBlog.csproj",
-        "packagesPath": "C:\\Users\\celine\\.nuget\\packages\\",
-        "outputPath": "C:\\Projekt Ilona\\CatBlog\\CatBlog\\obj\\",
+        "projectPath": "C:\\Users\\ilona\\Documents\\GitHub\\CatBlog\\CatBlog.csproj",
+        "packagesPath": "C:\\Users\\ilona\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ilona\\Documents\\GitHub\\CatBlog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\celine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ilona\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,10 +72,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

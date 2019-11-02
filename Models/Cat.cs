@@ -8,8 +8,9 @@ namespace CatBlog.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime BirthDate { get; set; }
+        public int Age { get; set; }
         public string Color { get; set; }
+
+        public string BestFail { get; set; }
     }
 }

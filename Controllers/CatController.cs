@@ -26,20 +26,18 @@ namespace CatBlog.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(IFormFile catImage)
+        public async Task<IActionResult> Post(Cat newCat)
         {
-            // full path to file in temp location
-            var filePath = Path.GetTempFileName();
+            _context.Cat.Add(newCat);
+            await _context.SaveChangesAsync();
+            return Redirect("/");
+        }
 
-            if (catImage.Length > 0)
-            {
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await catImage.CopyToAsync(stream);
-                }
-            }
-
-            return Ok(new { filePath });
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int catId) {
+            // var catToRemove = _context.Cat.FindAsync();
+            // _context.Cat.Remove()
+            return Ok();
         }
     }
 }

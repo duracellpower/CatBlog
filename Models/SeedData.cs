@@ -22,29 +22,33 @@ namespace CatBlog.Models
                     new Cat
                     {
                         Name = "Mio Bonsai",
-                        BirthDate = DateTime.Parse("2017-12-06"),
+                        Age = 2,
                         Color = "black and white",
+                        BestFail = "Taken by the police"
                     },
 
                     new Cat
                     {
                         Name = "Felix",
-                        BirthDate = DateTime.Parse("2000-8-1"),
+                        Age = 18,
                         Color = "Tiger",
+                        BestFail = "Stealing candy"
                     },
 
                     new Cat
                     {
                         Name = "Nacho",
-                        BirthDate = DateTime.Parse("2010-2-23"),
+                        Age = 9,
                         Color = "black and white",
+                        BestFail = "Bankrobery"
                     },
 
                     new Cat
                     {
                         Name = "Roxy",
-                        BirthDate = DateTime.Parse("2014-4-15"),
+                        Age = 4,
                         Color = "black",
+                        BestFail = "Cursing everybody"
                     }
                 );
                 context.SaveChanges();

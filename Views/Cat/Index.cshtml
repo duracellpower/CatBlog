@@ -15,21 +15,30 @@
                         @Html.DisplayNameFor(model => model.Color)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.BirthDate)
+                        @Html.DisplayNameFor(model => model.Age)
+                    </th>
+                    <th>
+                        Best fail
                     </th>
                 </tr>
             </thead>
             <tbody>
-            @foreach (var item in Model) {
+            @foreach (var cat in Model) {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Name)
+                        @Html.DisplayFor(modelItem => cat.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Color)
+                        @Html.DisplayFor(modelItem => cat.Color)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.BirthDate)
+                        @Html.DisplayFor(modelItem => cat.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => cat.BestFail)
+                    </td>
+                    <td>
+                        <button class="button is-danger is-light" onclick="deleteCat(@(cat.Id))">Delete</button>
                     </td>
                 </tr>
             }
@@ -39,19 +48,35 @@
         <br>
         <br>
         <form method="post" enctype="multipart/form-data" asp-controller="Cat" asp-action="Post">
-            <div class="file">
-                <label class="file-label">
-                    <input class="file-input" type="file" name="catImage">
-                    <span class="file-cta">
-                        <span class="file-icon">
-                            <i class="fas fa-upload"></i>
-                        </span>
-                        <span class="file-label">
-                            Choose a file…
-                        </span>
-                    </span>
-                </label>
+
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input" name="name" type="text">
+                </div>
             </div>
+
+            <div class="field">
+                <label class="label">Color</label>
+                <div class="control">
+                    <input class="input" name="color" type="text">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Age</label>
+                <div class="control">
+                    <input class="input" name="age" type="number">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Best Fail</label>
+                <div class="control">
+                    <textarea class="textarea"  name="bestFail" placeholder="remember: Mio is the master of desaster ;-)"></textarea>
+                </div>
+            </div>
+           
             <div class="control">
                 <button class="button is-link" type="submit">Submit</button>
             </div>
