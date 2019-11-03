@@ -4,8 +4,21 @@
 }
 
     <div class="text-center">
-        <h1 class="is-size-2 has-text-weight-bold">Welcome to Mio's Cat Blog, it's amazing!</h1>
+        <div class="container">
+            <h1 class="is-size-2 has-text-weight-bold">Welcome to Mio's Cat Blog!</h1>
+
+            <p>To be part of my lovely community, please log in.</p>
+
+            <a class="button is-link" asp-area="Identity" asp-page="/Account/Login" Id="login">Login</a>
+            <a class="button is-link is-outlined" asp-area="Identity" asp-page="/Account/Register" Id="register">Register</a>
+
+            <h3 class="is-size-4 has-text-weight-bold">Hi, I'm Mio, and I'm the master of desaster.</h3>
+            <p>In my Blog, I'will share my daly fails with my lovely community and it would be very nice, to hear also what's happend to you.</p>
+            <p>Try to beat me, but that will be hard, good luck and stay safe!</p>
+          </div>
+          <br>
         <table class="table">
+
             <thead>
                 <tr>
                     <th>
@@ -18,7 +31,7 @@
                         @Html.DisplayNameFor(model => model.Age)
                     </th>
                     <th>
-                        Best fail
+                        @Html.DisplayNameFor(model => model.BestFail)
                     </th>
                 </tr>
             </thead>
@@ -44,41 +57,49 @@
             }
             </tbody>
         </table>
-        <br>
-        <br>
-        <br>
-        <form method="post" enctype="multipart/form-data" asp-controller="Cat" asp-action="Post">
+    
 
-            <div class="field">
-                <label class="label">Name</label>
-                <div class="control">
-                    <input class="input" name="name" type="text">
-                </div>
-            </div>
+        <div class="container">
+            <form method="post" enctype="multipart/form-data" asp-controller="Cat" asp-action="Post">
+                <div class="columns">
+                    <div class="column is-7"> 
+                        <div class="field">
+                            <label class="label">Name</label>
+                            <div class="control">
+                                <input class="input" name="name" type="text">
+                            </div>
+                        </div>
 
-            <div class="field">
-                <label class="label">Color</label>
-                <div class="control">
-                    <input class="input" name="color" type="text">
-                </div>
-            </div>
+                        <div class="field">
+                            <label class="label">Color</label>
+                            <div class="control">
+                                <input class="input" name="color" type="text">
+                            </div>
+                        </div>
 
-            <div class="field">
-                <label class="label">Age</label>
-                <div class="control">
-                    <input class="input" name="age" type="number">
-                </div>
-            </div>
+                        <div class="field">
+                            <label class="label">Age</label>
+                            <div class="control">
+                                <input class="input" name="age" type="number">
+                            </div>
+                        </div>
 
-            <div class="field">
-                <label class="label">Best Fail</label>
-                <div class="control">
-                    <textarea class="textarea"  name="bestFail" placeholder="remember: Mio is the master of desaster ;-)"></textarea>
+                        <div class="field">
+                            <label class="label">Best Fail</label>
+                            <div class="control">
+                                <textarea class="textarea"  name="bestFail" placeholder="remember: Mio is the master of desaster ;-)"></textarea>
+                            </div>
+                        </div>
+                    
+                        <div class="control">
+                            <button class="button is-link" type="submit">Submit</button>
+                        </div>
+                    </div>
+                    <div class="column is-i"></div>
+                    <div class="column is-4">
+                        <img src="flyingcat.jpg" alt="../../wwwroot/img/flying cat">
+                    </div>
                 </div>
-            </div>
-           
-            <div class="control">
-                <button class="button is-link" type="submit">Submit</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>

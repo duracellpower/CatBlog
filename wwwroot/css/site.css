@@ -51,7 +51,7 @@ footer {
 }
 
 .text-center {
-  margin-bottom: 900px; /* Nur mal zum Testen wie es aussehen könnte */
+  margin-bottom: 100px; /* Nur mal zum Testen wie es aussehen könnte */
 }
 
 .navbar {
@@ -90,3 +90,10 @@ h1 {
 /* .catImg {
   width: 100%;
 } */
+
+#login, 
+#register {
+  margin: 10px;
+}
+
+
