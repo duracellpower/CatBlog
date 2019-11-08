@@ -1,11 +1,10 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-function deleteCat(catId) {
+﻿function deleteCat(catId) {
     var req = new XMLHttpRequest();
     req.open("DELETE", "/cat/delete/" + encodeURIComponent(catId));
+    req.onreadystatechange = function (ev) {
+        if (req.status === 200) {
+            window.location.reload();
+        }
+    };
     req.send();
-    console.log('DELETING?', catId);
 }

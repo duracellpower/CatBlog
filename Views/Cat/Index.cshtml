@@ -1,22 +1,21 @@
-﻿@model IEnumerable<CatBlog.Models.Cat>
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<CatBlog.Models.Cat>
+@inject SignInManager<IdentityUser> SignInManager
 @{
     ViewData["Title"] = "Home Page";
 }
 
+@if (SignInManager.IsSignedIn(User))
+{
     <div class="text-center">
         <div class="container">
             <h1 class="is-size-2 has-text-weight-bold">Welcome to Mio's Cat Blog!</h1>
 
-            <p>To be part of my lovely community, please log in.</p>
-
-            <a class="button is-link" asp-area="Identity" asp-page="/Account/Login" Id="login">Login</a>
-            <a class="button is-link is-outlined" asp-area="Identity" asp-page="/Account/Register" Id="register">Register</a>
-
             <h3 class="is-size-4 has-text-weight-bold">Hi, I'm Mio, and I'm the master of desaster.</h3>
             <p>In my Blog, I'will share my daly fails with my lovely community and it would be very nice, to hear also what's happend to you.</p>
             <p>Try to beat me, but that will be hard, good luck and stay safe!</p>
-          </div>
-          <br>
+        </div>
+        <br>
         <table class="table">
 
             <thead>
@@ -97,9 +96,19 @@
                     </div>
                     <div class="column is-i"></div>
                     <div class="column is-4">
-                        <img src="flyingcat.jpg" alt="../../wwwroot/img/flying cat">
+                        <img src="/img/flyingcat.jpg" alt="Flying cat">
                     </div>
                 </div>
             </form>
         </div>
     </div>
+}
+else {
+    <div class="text-center">
+        <div class="container">
+            <h1 class="is-size-2 has-text-weight-bold">Welcome to Mio's Cat Blog!</h1>
+
+            <p>To be part of my lovely community, please log in.</p>
+        </div>
+    </div>
+}

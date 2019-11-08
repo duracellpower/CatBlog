@@ -16,8 +16,6 @@ namespace CatBlog.Controllers
             _context = context;
         }
 
-        // 
-        // GET: /cat/
 
         public async Task<IActionResult> Index()
         {
@@ -33,11 +31,12 @@ namespace CatBlog.Controllers
             return Redirect("/");
         }
 
-        [HttpDelete]
+        [HttpDelete("/cat/delete/{catId}")]
         public async Task<IActionResult> Delete(int catId) {
-            // var catToRemove = _context.Cat.FindAsync();
-            // _context.Cat.Remove()
-            return Ok();
+            var catToRemove = await _context.Cat.FindAsync(catId);
+            _context.Cat.Remove(catToRemove);
+            await _context.SaveChangesAsync();
+            return Redirect("/");
         }
     }
 }
